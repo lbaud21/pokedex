@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 
-function useScrollEventListener(callback: () => void) {
+function useScrollEventListener(callback) {
   function handleScroll() {
     if (
       window.innerHeight + document.documentElement.scrollTop !==
       document.documentElement.offsetHeight
     )
       return;
-
     callback();
   }
 

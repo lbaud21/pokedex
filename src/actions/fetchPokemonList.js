@@ -2,6 +2,7 @@ import {
   FETCH_POKEMON_LIST_REQUEST,
   FETCH_POKEMON_LIST_SUCCESS,
   FETCH_POKEMON_LIST_FAILURE,
+  HAS_MORE,
 } from ".";
 
 import { PokeAPI } from "../config";
@@ -27,7 +28,14 @@ export function fetchPokemonListFailure(error) {
   };
 }
 
-export function fetchPokemonList({ limit, offset }) {
+export function hasMore(more) {
+  return {
+    type: HAS_MORE,
+    payload: more,
+  };
+}
+
+export function fetchPokemonList(limit, offset) {
   return async function (dispatch = useDispatch()) {
     dispatch(fetchPokemonListRequest());
     const interval = {
@@ -37,6 +45,11 @@ export function fetchPokemonList({ limit, offset }) {
 
     try {
       const response = await PokeAPI.getPokemonsList(interval);
+      if (response.next) {
+        dispatch(hasMore(true));
+      } else {
+        dispatch(hasMore(false));
+      }
       const pokemonList = await Promise.all(
         response.results.map(async (pokemon) => {
           try {

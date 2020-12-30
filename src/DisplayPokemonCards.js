@@ -2,17 +2,25 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CreatePokemonCards from "./CreatePokemonCards";
 import { fetchPokemonList } from "./actions/fetchPokemonList";
+import useScrollEventListener from "./hooks/useScrollEventListener";
 
 export default function DisplayPokemonCards() {
   const pokemonList = useSelector((state) => state.pokemonList);
+  const loading = useSelector((state) => state.loading);
+  const hasMore = useSelector((state) => state.hasMore);
   const dispatch = useDispatch();
-  const [interval, setInterval] = useState({ limit: 21, offset: 0 });
+  const limit = 21;
+  const [offset, setOffset] = useState(0);
+
+  const infiniteScroll = () => {
+    return setOffset((prevState) => prevState + 22);
+  };
+
+  useScrollEventListener(infiniteScroll);
 
   useEffect(() => {
-    dispatch(fetchPokemonList(interval));
-  }, [interval]);
-
-  console.log(pokemonList);
+    dispatch(fetchPokemonList(limit, offset));
+  }, [offset]);
 
   return (
     <>
