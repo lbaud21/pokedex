@@ -4,13 +4,21 @@ function App() {
   return (
     <>
       <header>
-        <div>
-          <img src="./images/pokeball_logo.jpg" alt="Pokedex logo"></img>
-          <h1>Pokedex</h1>
-        </div>
+        <img
+          className="logo"
+          src="./images/pokeball_logo.jpg"
+          alt="Pokedex logo"
+        ></img>
+        <img
+          className="title"
+          src="./images/Pokedex.png"
+          alt="Pokedex title"
+        ></img>
       </header>
       <div className="App">
-        <DisplayPokemonCards />
+        <div className="wrapper">
+          <DisplayPokemonCards />
+        </div>
       </div>
     </>
   );
