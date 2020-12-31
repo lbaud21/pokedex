@@ -1,9 +1,16 @@
 import React from "react";
 import "./styles/App.css";
+import { Link } from "@reach/router";
 
-export default function CreatePokemonCards({ name, picURL, height, weight }) {
+export default function CreatePokemonCards({
+  name,
+  picURL,
+  height,
+  weight,
+  types,
+}) {
   return (
-    <div className="card">
+    <Link to={`/details/${name}`} className="card">
       <h2>{name}</h2>
       <div className="image-container">
         <img
@@ -13,6 +20,14 @@ export default function CreatePokemonCards({ name, picURL, height, weight }) {
         ></img>
       </div>
       <p>{`height: ${height} in weight: ${weight} lb`}</p>
-    </div>
+      <div>
+        {types.map((item) => (
+          <img
+            src={`./images/types/${item.type.name}.svg`}
+            alt={`${item.type.name} type`}
+          />
+        ))}
+      </div>
+    </Link>
   );
 }

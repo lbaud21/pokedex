@@ -1,4 +1,6 @@
 import DisplayPokemonCards from "./DisplayPokemonCards";
+import DisplayPokemonDetails from "./DisplayPokemonDetails";
+import { Router } from "@reach/router";
 
 function App() {
   return (
@@ -16,9 +18,10 @@ function App() {
         ></img>
       </header>
       <div className="App">
-        <div className="wrapper">
-          <DisplayPokemonCards />
-        </div>
+        <Router>
+          <DisplayPokemonCards path="/" />
+          <DisplayPokemonDetails path="/details/:id" />
+        </Router>
       </div>
     </>
   );

@@ -12,8 +12,7 @@ export default function DisplayPokemonCards() {
   const hasMore = useSelector((state) => state.hasMore);
   const dispatch = useDispatch();
   const limit = 21;
-  const [offset, setOffset] = useState(1000);
-  const observedRef = useRef();
+  const [offset, setOffset] = useState(0);
 
   /*const infiniteScroll = () => {
     return setOffset((prevState) => prevState + 22);
@@ -27,7 +26,7 @@ export default function DisplayPokemonCards() {
 
   useEffect(() => {
     dispatch(fetchPokemonList(limit, offset));
-  }, [offset]);
+  }, [offset, dispatch]);
 
   //useIntersectionObserverScroll(observedRef)
 
@@ -39,7 +38,6 @@ export default function DisplayPokemonCards() {
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
           changeOffset();
-          console.log("intersecting");
         }
       });
       if (node) observer.current.observe(node);
@@ -48,7 +46,7 @@ export default function DisplayPokemonCards() {
   );
 
   return (
-    <>
+    <div className="wrapper">
       {pokemonList.map((pokemon) => (
         <CreatePokemonCards
           key={pokemon.name}
@@ -56,12 +54,13 @@ export default function DisplayPokemonCards() {
           picURL={pokemon.sprites.other.dream_world.front_default}
           height={pokemon.height}
           weight={pokemon.weight}
+          types={pokemon.types}
         />
       ))}
       <div id="observer" ref={lastPokemonCardRef}>
         ------------
       </div>
       {loading && <Loader />}
-    </>
+    </div>
   );
 }
