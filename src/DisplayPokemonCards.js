@@ -7,9 +7,9 @@ import useIntersectionObserverScroll from "./hooks/useIntersectionObserverScroll
 import Loader from "./loader/loader";
 
 export default function DisplayPokemonCards() {
-  const pokemonList = useSelector((state) => state.pokemonList);
-  const loading = useSelector((state) => state.loading);
-  const hasMore = useSelector((state) => state.hasMore);
+  const pokemonList = useSelector((state) => state.pokemonList.pokemonList);
+  const loading = useSelector((state) => state.pokemonList.loading);
+  const hasMore = useSelector((state) => state.pokemonList.hasMore);
   const dispatch = useDispatch();
   const limit = 21;
   const [offset, setOffset] = useState(0);

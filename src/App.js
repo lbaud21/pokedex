@@ -8,12 +8,12 @@ function App() {
       <header>
         <img
           className="logo"
-          src="./images/pokeball_logo.jpg"
+          src="/./images/pokeball_logo.jpg"
           alt="Pokedex logo"
         ></img>
         <img
           className="title"
-          src="./images/Pokedex.png"
+          src="/./images/Pokedex.png"
           alt="Pokedex title"
         ></img>
       </header>

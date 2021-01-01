@@ -23,6 +23,7 @@ export default function CreatePokemonCards({
       <div>
         {types.map((item) => (
           <img
+            key={`${name} ${item.type.name}`}
             src={`./images/types/${item.type.name}.svg`}
             alt={`${item.type.name} type`}
           />
