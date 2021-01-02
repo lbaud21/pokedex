@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/DisplayPokemonDetails.css";
 
 export default function CreatePokemonDetails({
   name,
@@ -11,8 +12,8 @@ export default function CreatePokemonDetails({
   stats,
 }) {
   return (
-    <>
-      <div className="pokemon-presentation">
+    <div className="details-wrapper">
+      <div className="pokemon-presentation container">
         <h2>{name}</h2>
         <div className="image-container">
           <img
@@ -21,8 +22,11 @@ export default function CreatePokemonDetails({
             alt={name}
           ></img>
         </div>
-        <p>{`height: ${height} in weight: ${weight} lb`}</p>
-        <div>
+      </div>
+
+      <div className="pokemon-types container">
+        <h3>Types</h3>
+        <div className="types">
           {types?.map((item) => (
             <img
               key={`${name}${item.type.name}`}
@@ -32,20 +36,30 @@ export default function CreatePokemonDetails({
           ))}
         </div>
       </div>
-      <div className="pokemon-stats">
-        {abilities?.map((ability) => (
-          <p key={ability.ability.name}>{ability.ability.name}</p>
-        ))}
-        {/*moves?.map((move) => (
-          <p key={move.move.name}>{move.move.name}</p>
-        ))*/}
+
+      <div className="pokemon-caracteristics container">
+        <h3>Caracteristics</h3>
+        <div className="mensurations">
+          <p>{`height: ${height} m`}</p>
+          <p>{`weight: ${weight} kg`}</p>
+        </div>
+
+        <div className="abilities">
+          {abilities?.map((ability) => (
+            <p key={ability.ability.name}>{ability.ability.name}</p>
+          ))}
+        </div>
+      </div>
+
+      <div className="pokemon-stats container">
+        <h3>Stats</h3>
         {stats?.map((stat, index) => (
           <div key={`${stat.stat.name}`}>
-            <p>{stat.stat.name}</p>
-            <p>{stat.base_stat}</p>
+            <p className="stat-name">{stat.stat.name}</p>
+            <progress max="100" value={stat.base_stat} />
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }

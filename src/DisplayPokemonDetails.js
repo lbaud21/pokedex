@@ -16,21 +16,20 @@ export default function DisplayPokemonDetails() {
   }, [dispatch]);
   console.log(pokemon);
   return (
-    <>
+    <div className="wrapper">
       {!loading && (
         <CreatePokemonDetails
           key={pokemonName}
           name={pokemonName}
           picURL={pokemon?.sprites?.other?.dream_world?.front_default}
-          height={pokemon?.height}
-          weight={pokemon?.weight}
+          height={parseFloat(pokemon?.height * 0.1).toFixed(1)}
+          weight={parseFloat(pokemon?.weight * 0.1).toFixed(1)}
           types={pokemon?.types}
           abilities={pokemon?.abilities}
           moves={pokemon?.moves}
           stats={pokemon?.stats}
         />
       )}
-      <div></div>
-    </>
+    </div>
   );
 }

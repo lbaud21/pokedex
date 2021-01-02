@@ -11,42 +11,9 @@ header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  margin-bottom: 2em;
 }
 
 .logo {
   width: 10rem;
-}
-
-.wrapper {
-  display: flex;
-  flex-flow: row wrap;
-  width: 70%;
-  margin: 0 15%;
-  justify-content: center;
-}
-
-.card {
-  text-decoration: none;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  border: solid black 3px;
-  border-radius: 3%;
-  width: 31%;
-  height: 400px;
-  margin: 1%;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  width: 80%;
-  height: 60%;
-  margin: 0 10%;
-}
-
-.pokemon-image {
-  height: 100%;
-  width: 80%;
 }

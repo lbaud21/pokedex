@@ -5,6 +5,7 @@ import { fetchPokemonList } from "./actions/fetchPokemonList";
 //import useScrollEventListener from "./hooks/useScrollEventListener";
 import useIntersectionObserverScroll from "./hooks/useIntersectionObserverScroll";
 import Loader from "./loader/loader";
+import "./styles/DisplayPokemonCards.css";
 
 export default function DisplayPokemonCards() {
   const pokemonList = useSelector((state) => state.pokemonList.pokemonList);
@@ -46,14 +47,14 @@ export default function DisplayPokemonCards() {
   );
 
   return (
-    <div className="wrapper">
+    <div className="cards-wrapper">
       {pokemonList.map((pokemon) => (
         <CreatePokemonCards
           key={pokemon.name}
           name={pokemon.name}
           picURL={pokemon.sprites.other.dream_world.front_default}
-          height={pokemon.height}
-          weight={pokemon.weight}
+          height={parseFloat(pokemon?.height * 0.1).toFixed(1)}
+          weight={parseFloat(pokemon?.weight * 0.1).toFixed(1)}
           types={pokemon.types}
         />
       ))}
