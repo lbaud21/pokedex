@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPokemonDetails } from "./actions/fetchPokemonDetails";
+import { fetchPokemonDetails } from "../actions/fetchPokemonDetails";
+import { fetchEvolutionChain } from "../actions/fetchEvolutionChain";
 import CreatePokemonDetails from "./CreatePokemonDetails";
 
 export default function DisplayPokemonDetails() {
@@ -8,13 +9,18 @@ export default function DisplayPokemonDetails() {
   const splittedURL = URL.split("/");
   const pokemonName = splittedURL[splittedURL.length - 1];
   const pokemon = useSelector((state) => state.pokemonDetails.pokemonDetails);
+  const id = useSelector((state) => state.pokemonDetails.pokemonDetails.id);
   const loading = useSelector((state) => state.pokemonDetails.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchPokemonDetails(pokemonName));
-  }, [dispatch]);
-  console.log(pokemon);
+  }, [dispatch, pokemonName]);
+
+  useEffect(() => {
+    dispatch(fetchEvolutionChain(id));
+  }, [dispatch, id]);
+
   return (
     <div className="wrapper">
       {!loading && (
@@ -26,7 +32,6 @@ export default function DisplayPokemonDetails() {
           weight={parseFloat(pokemon?.weight * 0.1).toFixed(1)}
           types={pokemon?.types}
           abilities={pokemon?.abilities}
-          moves={pokemon?.moves}
           stats={pokemon?.stats}
         />
       )}

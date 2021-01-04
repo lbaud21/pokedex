@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/DisplayPokemonDetails.css";
+import "../styles/DisplayPokemonDetails.css";
 
 export default function CreatePokemonDetails({
   name,
@@ -8,8 +8,8 @@ export default function CreatePokemonDetails({
   weight,
   types,
   abilities,
-  moves,
   stats,
+  descriptionText,
 }) {
   return (
     <div className="details-wrapper">
@@ -21,6 +21,9 @@ export default function CreatePokemonDetails({
             src={picURL ? picURL : "/./images/no-image.jpg"}
             alt={name}
           ></img>
+        </div>
+        <div className="pokemon-description">
+          <p>{descriptionText}</p>
         </div>
       </div>
 

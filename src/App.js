@@ -1,5 +1,5 @@
-import DisplayPokemonCards from "./DisplayPokemonCards";
-import DisplayPokemonDetails from "./DisplayPokemonDetails";
+import DisplayPokemonCards from "./components/DisplayPokemonCards";
+import ComponentsAssembly from "./components/ComponentsAssembly";
 import { Router } from "@reach/router";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
       <div className="App">
         <Router>
           <DisplayPokemonCards path="/" />
-          <DisplayPokemonDetails path="/details/:id" />
+          <ComponentsAssembly path="/details/:id" />
         </Router>
       </div>
     </>

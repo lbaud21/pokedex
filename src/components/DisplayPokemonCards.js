@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CreatePokemonCards from "./CreatePokemonCards";
-import { fetchPokemonList } from "./actions/fetchPokemonList";
+import { fetchPokemonList } from "../actions/fetchPokemonList";
 //import useScrollEventListener from "./hooks/useScrollEventListener";
-import useIntersectionObserverScroll from "./hooks/useIntersectionObserverScroll";
-import Loader from "./loader/loader";
-import "./styles/DisplayPokemonCards.css";
+import useIntersectionObserverScroll from "../hooks/useIntersectionObserverScroll";
+import Loader from "../loader/loader";
+import "../styles/DisplayPokemonCards.css";
 
 export default function DisplayPokemonCards() {
   const pokemonList = useSelector((state) => state.pokemonList.pokemonList);
@@ -53,8 +53,8 @@ export default function DisplayPokemonCards() {
           key={pokemon.name}
           name={pokemon.name}
           picURL={pokemon.sprites.other.dream_world.front_default}
-          height={parseFloat(pokemon?.height * 0.1).toFixed(1)}
-          weight={parseFloat(pokemon?.weight * 0.1).toFixed(1)}
+          height={pokemon?.height * (0.1).toFixed(1)}
+          weight={pokemon?.weight * (0.1).toFixed(1)}
           types={pokemon.types}
         />
       ))}

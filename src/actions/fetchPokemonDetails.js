@@ -32,11 +32,9 @@ export function fetchPokemonDetails(PokemonName) {
     dispatch(fetchPokemonDetailsRequest());
     try {
       const response = await PokeAPI.getPokemonByName(PokemonName);
-      console.log(response);
       dispatch(fetchPokemonDetailsSuccess(response));
     } catch (error) {
       dispatch(fetchPokemonDetailsFailure(error));
-      console.log(error);
     }
   };
 }
