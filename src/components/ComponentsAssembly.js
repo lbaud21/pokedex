@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PokemonDetails from "./PokemonDetails";
-import Species from "./Species";
+import EvolutionChain from "./EvolutionChain";
 
 export default function ComponentsAssembly() {
   /* const pokemon = PokemonDetails();
@@ -17,6 +17,7 @@ export default function ComponentsAssembly() {
   return (
     <>
       <PokemonDetails />
+      <EvolutionChain />
     </>
   );
 }

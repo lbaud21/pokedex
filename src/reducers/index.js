@@ -3,6 +3,7 @@ import { pokemonListReducer } from "./pokemonListReducer";
 import { pokemonDetailsReducer } from "./pokemonDetailsReducer";
 import { evolutionChainReducer } from "./evolutionChainReducer";
 import { speciesReducer } from "./speciesReducer";
+import { pokemonsFromEvolutionReducer } from "./pokemonsFromEvolutionReducer";
 
 export default function rootReducer() {
   return combineReducers({
@@ -10,5 +11,6 @@ export default function rootReducer() {
     pokemonDetails: pokemonDetailsReducer,
     species: speciesReducer,
     evolutionChain: evolutionChainReducer,
+    evolutionImages: pokemonsFromEvolutionReducer,
   });
 }

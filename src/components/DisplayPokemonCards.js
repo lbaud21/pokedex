@@ -53,8 +53,8 @@ export default function DisplayPokemonCards() {
           key={pokemon.name}
           name={pokemon.name}
           picURL={pokemon.sprites.other.dream_world.front_default}
-          height={pokemon?.height * (0.1).toFixed(1)}
-          weight={pokemon?.weight * (0.1).toFixed(1)}
+          height={(pokemon?.height * 0.1).toFixed(1)}
+          weight={(pokemon?.weight * 0.1).toFixed(1)}
           types={pokemon.types}
         />
       ))}
