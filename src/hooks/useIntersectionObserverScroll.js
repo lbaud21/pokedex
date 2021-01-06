@@ -1,23 +1,26 @@
 import React, { useRef, useCallback } from "react";
-import { useSelector, useDispatch } from "react-redux";
 
-export default function useIntersectionObserverScroll(observedRef) {
-  const loading = useSelector((state) => state.loading);
-  const hasMore = useSelector((state) => state.hasMore);
-  //const observer = useRef();
-
-  function handler(entries, observer) {
-    entries.forEach((entry) => {
-      console.log(entry);
-
-      if (entry.isIntersecting) {
-        console.log("intersecting");
-      } else {
-        console.log("not intersecting");
-      }
-    });
-  }
-
-  let observer = new IntersectionObserver(handler);
-  observer.observe(observedRef);
+export default function useIntersectionObserverScroll(
+  loading,
+  hasMore,
+  changeOffset
+) {
+  const observer = useRef();
+  const lastPokemonCardRef = useCallback(
+    (node) => {
+      if (loading) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && hasMore) {
+            changeOffset();
+          }
+        },
+        { threshold: 1 }
+      );
+      if (node) observer.current.observe(node);
+    },
+    [loading, hasMore, changeOffset]
+  );
+  return lastPokemonCardRef;
 }
