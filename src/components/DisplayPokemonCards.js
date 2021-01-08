@@ -12,10 +12,10 @@ export default function DisplayPokemonCards() {
   const hasMore = useSelector((state) => state.pokemonList.hasMore);
   const dispatch = useDispatch();
   const limit = 21;
-  const [offset, setOffset] = useState(0);
+  const [offset, setOffset] = useState(pokemonList ? pokemonList.length : 0);
 
   const changeOffset = () => {
-    return setOffset((prevState) => prevState + 22);
+    return setOffset((prevState) => prevState + 21);
   };
 
   useEffect(() => {

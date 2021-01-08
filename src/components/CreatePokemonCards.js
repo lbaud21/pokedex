@@ -15,7 +15,10 @@ export default function CreatePokemonCards({
   if (listLength === index + 1) {
     return (
       <Link to={`/details/${name}`} className="card" ref={callbackFunc}>
-        <h2>{name}</h2>
+        <div className="card-header">
+          <h2>{name}</h2>
+          <button type="button" className="team-button" />
+        </div>
         <div className="image-container">
           <img
             className="pokemon-image"
@@ -24,7 +27,7 @@ export default function CreatePokemonCards({
           ></img>
         </div>
         <p>{`height: ${height} in weight: ${weight} lb`}</p>
-        <div>
+        <div className="types">
           {types.map((item) => (
             <img
               key={`${name} ${item.type.name}`}
@@ -38,7 +41,15 @@ export default function CreatePokemonCards({
   } else {
     return (
       <Link to={`/details/${name}`} className="card">
-        <h2>{name}</h2>
+        <div className="card-header">
+          <h2>{name}</h2>
+          <button type="button" className="team-button">
+            <img
+              src="./images/star.png"
+              alt="Click me to add a pokemon to your team"
+            />
+          </button>
+        </div>
         <div className="image-container">
           <img
             className="pokemon-image"
@@ -47,7 +58,7 @@ export default function CreatePokemonCards({
           ></img>
         </div>
         <p>{`height: ${height} in weight: ${weight} lb`}</p>
-        <div>
+        <div className="types">
           {types.map((item) => (
             <img
               key={`${name} ${item.type.name}`}

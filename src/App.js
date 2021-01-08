@@ -1,22 +1,25 @@
 import DisplayPokemonCards from "./components/DisplayPokemonCards";
 import ComponentsAssembly from "./components/ComponentsAssembly";
-import { Router } from "@reach/router";
+import { Router, Link } from "@reach/router";
 
 function App() {
   return (
     <>
-      <header>
-        <img
-          className="logo"
-          src="/./images/pokeball_logo.jpg"
-          alt="Pokedex logo"
-        ></img>
-        <img
-          className="title"
-          src="/./images/Pokedex.png"
-          alt="Pokedex title"
-        ></img>
+      <header path="/">
+        <Link to="/">
+          <img
+            className="logo"
+            src="/./images/pokeball_logo.jpg"
+            alt="Pokedex logo"
+          ></img>
+          <img
+            className="title"
+            src="/./images/Pokedex.png"
+            alt="Pokedex title"
+          ></img>
+        </Link>
       </header>
+
       <div className="App">
         <Router>
           <DisplayPokemonCards path="/" />

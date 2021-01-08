@@ -7,6 +7,12 @@ import OrganizeEvolutionChain from "./OrganizeEvolutionChain";
 
 export default function EvolutionChain() {
   const dispatch = useDispatch();
+  const evolutionChainLoading = useSelector(
+    (state) => state?.evolutionChain?.loading
+  );
+  const evolutionImagesLoading = useSelector(
+    (state) => state?.evolutionImages?.loading
+  );
 
   const extractIdFromUrl = (url) => {
     const splittedUrl = url?.split("/");
@@ -20,5 +26,9 @@ export default function EvolutionChain() {
     if (evolutionChainId) dispatch(fetchEvolutionChain(evolutionChainId));
   }, [dispatch, evolutionChainId]);
 
-  return <OrganizeEvolutionChain />;
+  return (
+    <OrganizeEvolutionChain
+      loading={evolutionChainLoading || evolutionImagesLoading}
+    />
+  );
 }

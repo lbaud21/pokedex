@@ -1,28 +1,44 @@
 import React from "react";
+import { Link } from "@reach/router";
+import "../styles/pokemonDetails.css";
 
 export default function CreateEvolutionChain({
   evolutionsNames,
   evolutionsImages,
+  loading,
 }) {
+  if (loading) {
+    return <div></div>;
+  }
   return (
-    <div>
-      {evolutionsNames.map((name, index) => {
-        return (
-          <div key={`evolution ${name}`}>
-            <p>{name}</p>
-            <div>
-              <img
-                src={
-                  evolutionsImages[index]
-                    ? evolutionsImages[index]
-                    : "../../public/images/no-image.jpg"
-                }
-                alt={name}
-              />
-            </div>
-          </div>
-        );
-      })}
+    <div className="evolution-container container">
+      <div className="container-title">
+        <h3>Evolutions</h3>
+      </div>
+      <div className="container-content">
+        {evolutionsNames.map((name, index) => {
+          return (
+            <Link
+              to={`/details/${name}`}
+              key={`evolution ${name}`}
+              className="evolution-data"
+            >
+              <p className="evolution-name">{name}</p>
+              <div className="image-container">
+                <img
+                  className="pokemon-image"
+                  src={
+                    evolutionsImages[index]
+                      ? evolutionsImages[index]
+                      : "../../public/images/no-image.jpg"
+                  }
+                  alt={name}
+                />
+              </div>
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }

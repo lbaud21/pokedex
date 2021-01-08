@@ -17,11 +17,14 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  border: solid black 3px;
+  border: solid black 1px;
   border-radius: 3%;
   width: 31%;
   height: 400px;
   margin: 1%;
+  -moz-box-shadow: 0 0 0.5em grey;
+  -webkit-box-shadow: 0 0 0.5em grey;
+  box-shadow: 0 0 0.5em grey;
 }
 
 .card .image-container {
@@ -35,4 +38,44 @@
 .card .pokemon-image {
   height: 100%;
   width: 80%;
+  transition: transform;
+  transition-duration: 0.5s;
+}
+
+.card:hover .pokemon-image {
+  transform: scale(1.2);
+}
+
+.card:hover {
+  background-color: #ffe031;
+  border: solid #396bba 5px;
+  -moz-box-shadow: 0 0 1.5em 0.5em #396bba;
+  -webkit-box-shadow: 0 0 1.5em 0.5em #396bba;
+  box-shadow: 0 0 1.5em 0.5em #396bba;
+}
+
+.card:hover .team-button {
+  background-color: #ffe031;
+}
+
+.card .team-button {
+  background-color: transparent;
+  border: none;
+}
+
+.card .card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 90%;
+}
+
+.card .card-header .team-button {
+  position: absolute;
+  right: 0;
+}
+
+.card .types {
+  margin-bottom: 1em;
 }

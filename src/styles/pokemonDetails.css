@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  border: solid black 3px;
+  border-radius: 1em;
+  display: flex;
+  flex-flow: column nowrap;
+  -moz-box-shadow: 0 0 0.75em rgb(180, 171, 171);
+  -webkit-box-shadow: 0 0 0.75em rgb(180, 171, 171);
+  box-shadow: 0 0 0.75em rgb(180, 171, 171);
+}
+
+.details-wrapper {
+  width: 80%;
+  margin: 1em auto;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 2fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "presentation caracteristics"
+    "presentation stats"
+    "types stats"
+    "evolution evolution"
+    "evolution evolution";
+}
+
+.container-title {
+  width: 100%;
+  text-align: center;
+  border-bottom: solid black 1px;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container-content {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.pokemon-presentation {
+  grid-area: presentation;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-presentation .container-title {
+  height: 4em;
+}
+
+.pokemon-presentation .container-title h2 {
+  margin: 0.5em 0;
+}
+
+.pokemon-presentation .container-content {
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.pokemon-presentation .image-container {
+  height: 35vh;
+}
+
+.pokemon-presentation .pokemon-image {
+  height: 100%;
+}
+
+.pokemon-presentation .pokemon-description {
+  margin: 1em;
+}
+
+.pokemon-types {
+  grid-area: types;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-types .container-title {
+  height: 4em;
+}
+
+.pokemon-types .container-content {
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.pokemon-types .image-container {
+  width: 100%;
+  text-align: center;
+}
+
+.pokemon-types img {
+  width: 25%;
+}
+
+.pokemon-caracteristics {
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-caracteristics .container-title {
+  height: 4em;
+}
+
+.pokemon-caracteristics .container-content {
+  grid-area: caracteristics;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.pokemon-stats {
+  grid-area: stats;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-stats .container-title {
+  height: 4em;
+}
+
+.pokemon-stats .container-content {
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.pokemon-presentation .image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+}
+
+.pokemon-presentation .pokemon-image {
+  width: 80%;
+}
+
+.pokemon-presentation .pokemon-description {
+  text-align: center;
+}
+
+.pokemon-stats .stat-name {
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+progress {
+  width: 45em;
+  height: 3em;
+  margin: 1em;
+}
+
+.evolution-container {
+  grid-area: evolution;
+  border-radius: 1em;
+}
+
+.evolution-container .container-title {
+  height: 4em;
+}
+
+.evolution-container .container-content {
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.evolution-container .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s;
+  height: 35vh;
+  margin: 2em;
+}
+
+.evolution-container .pokemon-image {
+  height: 100%;
+}
+
+.evolution-container .image-container:hover {
+  transform: scale(1.2);
+}

@@ -1,23 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import PokemonDetails from "./PokemonDetails";
 import EvolutionChain from "./EvolutionChain";
 
 export default function ComponentsAssembly() {
-  /* const pokemon = PokemonDetails();
-  const pokemonName = pokemon.name;*/
-
-  //const species = Species("bulbasaur");
-
-  /*const pokemonPresentationText = species?.flavor_text_entries?.[0].flavor_text;
-  const evolutionChainUrl = species?.evolution_chain?.url;
-  const evolutionChainId = evolutionChainUrl?.split("/")[
-    evolutionChainUrl?.split("/").length - 1
-  ]; //extract evolution chain id from url*/
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
 
   return (
-    <>
+    <div className="details-wrapper">
       <PokemonDetails />
       <EvolutionChain />
-    </>
+    </div>
   );
 }

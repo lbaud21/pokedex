@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import CreateEvolutionChain from "./CreateEvolutionChain";
 import { fetchPokemonsFromEvolution } from "../actions/fetchPokemonsFromEvolution";
 
-export default function OrganizeEvolutionChain() {
+export default function OrganizeEvolutionChain({ loading }) {
   const dispatch = useDispatch();
   const evolutionChain = useSelector(
     (state) => state?.evolutionChain?.evolutionChain?.chain
@@ -45,6 +45,7 @@ export default function OrganizeEvolutionChain() {
       <CreateEvolutionChain
         evolutionsNames={evolutionNameList}
         evolutionsImages={imagesList}
+        loading={loading}
       />
     </>
   );
