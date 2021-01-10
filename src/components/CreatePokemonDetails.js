@@ -14,7 +14,7 @@ export default function CreatePokemonDetails({
   loading,
 }) {
   if (loading) {
-    return <Loader />;
+    return <div></div>;
   }
   return (
     <>

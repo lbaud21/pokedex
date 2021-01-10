@@ -23,7 +23,7 @@ function App() {
       <div className="App">
         <Router>
           <DisplayPokemonCards path="/" />
-          <ComponentsAssembly path="/details/:id" />
+          <ComponentsAssembly path="/details/:name" />
         </Router>
       </div>
     </>

@@ -4,13 +4,24 @@ import { useSelector, useDispatch } from "react-redux";
 import CreateEvolutionChain from "./CreateEvolutionChain";
 import { fetchPokemonsFromEvolution } from "../actions/fetchPokemonsFromEvolution";
 
-export default function OrganizeEvolutionChain({ loading }) {
+export default function OrganizeEvolutionChain() {
   const dispatch = useDispatch();
   const evolutionChain = useSelector(
     (state) => state?.evolutionChain?.evolutionChain?.chain
   );
   const imagesList = useSelector(
     (state) => state?.evolutionImages?.evolutionImages
+  );
+
+  const pokemonDetailsLoading = useSelector(
+    (state) => state?.pokemonsDetails?.loading
+  );
+  const speciesLoading = useSelector((state) => state?.species?.loading);
+  const evolutionChainLoading = useSelector(
+    (state) => state?.evolutionChain?.loading
+  );
+  const evolutionImagesLoading = useSelector(
+    (state) => state?.evolutionImages?.loading
   );
 
   const extractDataFromEvolutionChain = (chain) => {
@@ -45,7 +56,12 @@ export default function OrganizeEvolutionChain({ loading }) {
       <CreateEvolutionChain
         evolutionsNames={evolutionNameList}
         evolutionsImages={imagesList}
-        loading={loading}
+        loading={
+          pokemonDetailsLoading ||
+          speciesLoading ||
+          evolutionChainLoading ||
+          evolutionImagesLoading
+        }
       />
     </>
   );

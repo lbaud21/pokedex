@@ -16,6 +16,12 @@ export default function DisplayPokemonDetails() {
     (state) => state?.pokemonsDetails?.loading
   );
   const speciesLoading = useSelector((state) => state?.species?.loading);
+  const evolutionChainLoading = useSelector(
+    (state) => state?.evolutionChain?.loading
+  );
+  const evolutionImagesLoading = useSelector(
+    (state) => state?.evolutionImages?.loading
+  );
 
   const dispatch = useDispatch();
 
@@ -43,7 +49,12 @@ export default function DisplayPokemonDetails() {
       descriptionText={extractEnglishText(
         species?.flavor_text_entries
       )?.flavor_text?.replace("", " ")}
-      loading={pokemonDetailsLoading || speciesLoading}
+      loading={
+        pokemonDetailsLoading ||
+        speciesLoading ||
+        evolutionChainLoading ||
+        evolutionImagesLoading
+      }
     />
   );
 }
