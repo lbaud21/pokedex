@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/pokemonDetails.css";
-import Loader from "../loader/loader";
 
 export default function CreatePokemonDetails({
   name,
@@ -64,7 +63,7 @@ export default function CreatePokemonDetails({
           </div>
 
           <div className="abilities">
-            <p>Abilities</p>
+            <p>Abilities:</p>
             {abilities?.map((ability) => (
               <p key={ability.ability.name}>{ability.ability.name}</p>
             ))}

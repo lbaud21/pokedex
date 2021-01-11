@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CreatePokemonCards from "./CreatePokemonCards";
 import { fetchPokemonList } from "../actions/fetchPokemonList";

@@ -4,6 +4,7 @@ import { pokemonDetailsReducer } from "./pokemonDetailsReducer";
 import { evolutionChainReducer } from "./evolutionChainReducer";
 import { speciesReducer } from "./speciesReducer";
 import { pokemonsFromEvolutionReducer } from "./pokemonsFromEvolutionReducer";
+import { favoritePokemonsListReducer } from "./favoritePokemonsListReducer";
 
 export default function rootReducer() {
   return combineReducers({
@@ -12,5 +13,6 @@ export default function rootReducer() {
     species: speciesReducer,
     evolutionChain: evolutionChainReducer,
     evolutionImages: pokemonsFromEvolutionReducer,
+    favoritePokemons: favoritePokemonsListReducer,
   });
 }
