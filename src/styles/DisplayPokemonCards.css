@@ -11,6 +11,11 @@
   justify-content: center;
 }
 
+.team-icon {
+  position: fixed;
+  right: 10em;
+}
+
 .card {
   text-decoration: none;
   display: flex;
@@ -20,11 +25,19 @@
   border: solid black 1px;
   border-radius: 3%;
   width: 31%;
-  height: 400px;
+  height: 60vh;
   margin: 1%;
   -moz-box-shadow: 0 0 0.5em grey;
   -webkit-box-shadow: 0 0 0.5em grey;
   box-shadow: 0 0 0.5em grey;
+}
+
+h2 {
+  margin: 0;
+}
+
+.card p {
+  margin-top: 0;
 }
 
 .card .image-container {
@@ -61,6 +74,7 @@
 .card .team-button {
   background-color: transparent;
   border: none;
+  outline: transparent;
 }
 
 .card .card-header {
@@ -69,6 +83,7 @@
   align-items: center;
   position: relative;
   width: 90%;
+  margin: 1em;
 }
 
 .card .card-header .team-button {
@@ -77,5 +92,45 @@
 }
 
 .card .types {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1em;
+  width: 80%;
+}
+
+.card .types img {
+  width: 25%;
+}
+
+@media screen and (max-width: 1200px) {
+  .cards-wrapper {
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+  .card {
+    width: 40%;
+  }
+
+  .lds-roller {
+    margin: 0 5em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .cards-wrapper {
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+  .card {
+    width: 70%;
+  }
+
+  .lds-roller {
+    margin: 0;
+  }
 }

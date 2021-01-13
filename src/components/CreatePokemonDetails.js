@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/pokemonDetails.css";
+//import "../styles/pokemonDetails.css";
 
 export default function CreatePokemonDetails({
   name,
@@ -58,12 +58,18 @@ export default function CreatePokemonDetails({
         </div>
         <div className="container-content">
           <div className="mensurations">
-            <p>{`height: ${height} m`}</p>
-            <p>{`weight: ${weight} kg`}</p>
+            <p>
+              <span>height:</span> {height} m
+            </p>
+            <p>
+              <span>weight:</span> {weight} m
+            </p>
           </div>
 
           <div className="abilities">
-            <p>Abilities:</p>
+            <p>
+              <span>Abilities:</span>
+            </p>
             {abilities?.map((ability) => (
               <p key={ability.ability.name}>{ability.ability.name}</p>
             ))}
@@ -77,7 +83,7 @@ export default function CreatePokemonDetails({
         </div>
         <div className="container-content">
           {stats?.map((stat, index) => (
-            <div key={`${stat.stat.name}`}>
+            <div key={`${stat.stat.name}`} className="progress-wrapper">
               <p className="stat-name">{stat.stat.name}</p>
               <progress max="100" value={stat.base_stat} />
             </div>

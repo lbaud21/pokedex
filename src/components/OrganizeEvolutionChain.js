@@ -1,5 +1,5 @@
 import _ from "lodash";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CreateEvolutionChain from "./CreateEvolutionChain";
 import { fetchPokemonsFromEvolution } from "../actions/fetchPokemonsFromEvolution";

@@ -44,7 +44,6 @@ export function fetchPokemonsFromEvolution(pokemonsNamesList) {
           return imageUrl;
         } catch (error) {
           dispatch(fetchPokemonsFromEvolutionFaillure(error));
-          console.log(error);
         }
       })
     );

@@ -1,40 +1,46 @@
-import {
-  FETCH_EVOLUTION_CHAIN_REQUEST,
-  FETCH_EVOLUTION_CHAIN_SUCCESS,
-  FETCH_EVOLUTION_CHAIN_FAILLURE,
-} from ".";
+import { FETCH_TEAM_REQUEST, FETCH_TEAM_SUCCESS, FETCH_TEAM_FAILLURE } from ".";
 
 import { PokeAPI } from "../config";
 import { useDispatch } from "react-redux";
 
-export function fetchEvolutionChainRequest() {
+import _ from "lodash";
+
+export function fetchTeamRequest() {
   return {
-    type: FETCH_EVOLUTION_CHAIN_REQUEST,
+    type: FETCH_TEAM_REQUEST,
   };
 }
 
-export function fetchEvolutionChainSuccess(chain) {
+export function fetchTeamSuccess(team) {
   return {
-    type: FETCH_EVOLUTION_CHAIN_SUCCESS,
-    payload: chain,
+    type: FETCH_TEAM_SUCCESS,
+    payload: team,
   };
 }
 
-export function fetchEvolutionChainFaillure(error) {
+export function fetchTeamFaillure(error) {
   return {
-    type: FETCH_EVOLUTION_CHAIN_FAILLURE,
+    type: FETCH_TEAM_FAILLURE,
     payload: error,
   };
 }
 
-export function fetchEvolutionChain(id) {
+export function fetchTeam(pokemonNamesList) {
   return async function (dispatch = useDispatch()) {
-    dispatch(fetchEvolutionChainRequest());
-    try {
-      const response = await PokeAPI.getEvolutionChainById(id);
-      dispatch(fetchEvolutionChainSuccess(response));
-    } catch (error) {
-      dispatch(fetchEvolutionChainFaillure(error));
+    if (_.isEmpty(pokemonNamesList)) {
+      dispatch(fetchTeamSuccess([]));
+    } else {
+      const teamList = await Promise.all(
+        pokemonNamesList.map(async (name) => {
+          try {
+            const pokemonName = await PokeAPI.getPokemonByName(name);
+            return pokemonName;
+          } catch (error) {
+            dispatch(fetchTeamFaillure(error));
+          }
+        })
+      );
+      dispatch(fetchTeamSuccess(teamList));
     }
   };
 }

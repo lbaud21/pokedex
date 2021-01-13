@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -29,12 +31,29 @@
 
 .container-title {
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-bottom: solid black 1px;
+}
+
+h2 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 2.5em;
+}
+
+h3 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 2em;
 }
 
 p {
   text-align: center;
+  font-size: 1.5em;
+}
+
+span {
+  text-decoration: underline;
 }
 
 a {
@@ -136,6 +155,15 @@ a {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  width: 100%;
+}
+
+.pokemon-stats .progress-wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .pokemon-presentation .image-container {
@@ -198,4 +226,27 @@ progress {
 
 .evolution-container .image-container:hover {
   transform: scale(1.2);
+}
+
+@media screen and (max-width: 1200px) {
+  .details-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  progress {
+    width: 90%;
+    height: 3em;
+    margin: 1em;
+  }
+  .evolution-container .container-content {
+    flex-flow: column nowrap;
+  }
+
+  .evolution-container .image-container {
+    height: 22vh;
+  }
+
+  .pokemon-types .image-container {
+    margin: 1em 0;
+  }
 }

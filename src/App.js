@@ -1,12 +1,13 @@
 import DisplayPokemonCards from "./components/DisplayPokemonCards";
 import DisplayDetailsAndEvolutions from "./components/DisplayDetailsAndEvolutions";
+import DisplayTeam from "./components/DisplayTeam";
 import { Router, Link } from "@reach/router";
 
 function App() {
   return (
     <>
       <header path="/">
-        <Link to="/">
+        <Link to="/" className="image-container">
           <img
             className="logo"
             src="/./images/pokeball_logo.jpg"
@@ -24,6 +25,7 @@ function App() {
         <Router>
           <DisplayPokemonCards path="/" />
           <DisplayDetailsAndEvolutions path="/details/:name" />
+          <DisplayTeam path="/team" />
         </Router>
       </div>
     </>

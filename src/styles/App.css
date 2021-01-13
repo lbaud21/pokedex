@@ -8,12 +8,28 @@
 }
 
 header {
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   margin-bottom: 2em;
 }
 
+header .image-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
 .logo {
   width: 10rem;
+}
+
+@media screen and (max-width: 800px) {
+  .logo {
+    width: 20%;
+  }
+  .title {
+    width: 60%;
+  }
 }
