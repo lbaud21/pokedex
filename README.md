@@ -4,7 +4,7 @@ Responsive React App which allows you to discover all the existing Pokémons.
 
 ### Scroll and discover all the Pokémons
 
-![Main Page](/public/main-page_illustration.png)
+![Main Page](/public/main-page_illustration.PNG)
 
 ### Click on a Pokémon card to display its details
 
