@@ -23,15 +23,15 @@ export default function HandleFavoriteButtonClick({ pokemonName }) {
     if (!favoritePokemonsList.includes(pokemonName)) {
       return (
         <img
-          src="./images/star.png"
+          src={`${process.env.PUBLIC_URL}/images/star.png`}
           alt="Click me to add a pokemon to your team"
         />
       );
     } else {
       return (
         <img
-          src="./images/checked_star.png"
-          alt="Click me to add a pokemon to your team"
+          src={`${process.env.PUBLIC_URL}/images/checked_star.png`}
+          alt="Click me to remove a pokemon from your team"
         />
       );
     }

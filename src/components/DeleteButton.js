@@ -12,7 +12,7 @@ export default function DeleteButton({ pokemonName }) {
   const ButtonImage = () => {
     return (
       <img
-        src="./images/trash_icon.png"
+        src={`${process.env.PUBLIC_URL}/images/trash_icon.png`}
         alt="Click me to add a pokemon to your team"
       />
     );

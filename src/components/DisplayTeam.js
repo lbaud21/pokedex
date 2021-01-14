@@ -32,7 +32,10 @@ export default function DisplayTeam() {
       >
         <p style={{ margin: "2em" }}>Your team is empty</p>
         <div>
-          <img src="./images/sad_emoji.png" alt="sad emoji" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/sad_emoji.png`}
+            alt="sad emoji"
+          />
         </div>
       </div>
     );

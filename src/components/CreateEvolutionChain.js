@@ -30,7 +30,7 @@ export default function CreateEvolutionChain({
                   src={
                     evolutionsImages[index]
                       ? evolutionsImages[index]
-                      : "../../public/images/no-image.jpg"
+                      : `${process.env.PUBLIC_URL}/images/no-image.jpg`
                   }
                   alt={name}
                 />

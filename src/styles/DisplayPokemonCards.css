@@ -66,12 +66,6 @@
   background-color: #ffe031;
 }
 
-.card .team-button {
-  background-color: transparent;
-  border: none;
-  outline: transparent;
-}
-
 .card .card-header {
   display: flex;
   justify-content: center;
@@ -82,9 +76,17 @@
   margin: 1em;
 }
 
-.card .card-header .team-button {
+.team-button {
+  background-color: transparent;
+  border: none;
+  outline: transparent;
   position: absolute;
   right: 0;
+  height: 100%;
+}
+
+.team-button img {
+  height: 60%;
 }
 
 .card .types {

@@ -10,17 +10,20 @@ function App() {
         <Link to="/" className="image-container">
           <img
             className="logo"
-            src="/./images/pokeball_logo.jpg"
+            src={`${process.env.PUBLIC_URL}/images/pokeball_logo.jpg`}
             alt="Pokedex logo"
           ></img>
           <img
             className="title"
-            src="/./images/Pokedex.png"
+            src={`${process.env.PUBLIC_URL}/images/Pokedex.png`}
             alt="Pokedex title"
           ></img>
         </Link>
         <Link to="/team" className="team-icon">
-          <img src="./images/team_icon.png" alt="Click me to see your team" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/team_icon.png`}
+            alt="Click me to see your team"
+          />
         </Link>
       </header>
 

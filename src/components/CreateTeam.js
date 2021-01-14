@@ -13,7 +13,9 @@ export default function CreateTeam({ name, picURL, height, weight, types }) {
       <div className="image-container">
         <img
           className="pokemon-image"
-          src={picURL ? picURL : "./images/no-image.jpg"}
+          src={
+            picURL ? picURL : `${process.env.PUBLIC_URL}/images/no-image.jpg`
+          }
           alt={name}
         ></img>
       </div>
@@ -23,7 +25,7 @@ export default function CreateTeam({ name, picURL, height, weight, types }) {
         {types.map((item) => (
           <img
             key={`${name}-${item.type.name}`}
-            src={`./images/types/${item.type.name}.svg`}
+            src={`${process.env.PUBLIC_URL}/images/types/${item.type.name}.svg`}
             alt={`${item.type.name} type`}
           />
         ))}
