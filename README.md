@@ -8,19 +8,19 @@ Responsive React App which allows you to discover all the existing Pokémons.
 
 ### Click on a Pokémon card to display its details
 
-![Pokémon details](/public/pokemons-details_illustration.png)
+![Pokémon details](/public/pokemons-details_illustration.PNG)
 
 ### Add/remove a Pokémon to your team by clicking the star button
 
-![Favorite button](/public/favorite_illustration.png)
+![Favorite button](/public/favorite_illustration.PNG)
 
 ### Display your team by clicking on the Pokécenter icon
 
-![Pokécenter icon](/public/pokecenter_illustration.png)
+![Pokécenter icon](/public/pokecenter_illustration.PNG)
 
 ### On the team page, remove a Pokémon by clicking on the trash icon
 
-![Delete button](/public/delete_illustration.png)
+![Delete button](/public/delete_illustration.PNG)
 
 The aim of this project was to learn and practice:
 
