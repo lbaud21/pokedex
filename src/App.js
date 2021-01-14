@@ -6,8 +6,8 @@ import { Router, Link } from "@reach/router";
 function App() {
   return (
     <>
-      <header path="/">
-        <Link to="/" className="image-container">
+      <header>
+        <Link to="/pokedex" className="image-container">
           <img
             className="logo"
             src={`${process.env.PUBLIC_URL}/images/pokeball_logo.jpg`}
@@ -29,7 +29,7 @@ function App() {
 
       <div className="App">
         <Router>
-          <DisplayPokemonCards path="/" />
+          <DisplayPokemonCards path="/pokedex" />
           <DisplayDetailsAndEvolutions path="/details/:name" />
           <DisplayTeam path="/team" />
         </Router>
