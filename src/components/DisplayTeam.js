@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchTeam } from "../actions/fetchTeam";
-import _ from "lodash";
 import CreateTeam from "./CreateTeam";
 import Loader from "../loader/loader";
 
@@ -14,8 +13,6 @@ export default function DisplayTeam() {
   const loading = useSelector((state) => state?.team?.loading);
 
   const dispatch = useDispatch();
-
-  console.log(teamData.length);
 
   useEffect(() => {
     dispatch(fetchTeam(namesOfPokemonsInTeam));

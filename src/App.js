@@ -19,6 +19,9 @@ function App() {
             alt="Pokedex title"
           ></img>
         </Link>
+        <Link to="/team" className="team-icon">
+          <img src="./images/team_icon.png" alt="Click me to see your team" />
+        </Link>
       </header>
 
       <div className="App">

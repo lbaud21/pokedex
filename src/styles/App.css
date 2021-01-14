@@ -25,11 +25,34 @@ header .image-container {
   width: 10rem;
 }
 
+.team-icon {
+  position: fixed;
+  top: 5%;
+  right: 10em;
+  width: 4%;
+}
+
+.team-icon img {
+  width: 100%;
+}
+
 @media screen and (max-width: 800px) {
   .logo {
     width: 20%;
   }
   .title {
     width: 60%;
+  }
+
+  .team-icon {
+    width: 10%;
+    left: 3%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .team-icon {
+    width: 10%;
+    left: 3%;
   }
 }

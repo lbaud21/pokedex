@@ -17,7 +17,8 @@ export default function CreateTeam({ name, picURL, height, weight, types }) {
           alt={name}
         ></img>
       </div>
-      <p>{`height: ${height} m weight: ${weight} kg`}</p>
+      <p>{`height: ${height} m`}</p>
+      <p>{`weight: ${weight} kg`}</p>
       <div className="types">
         {types.map((item) => (
           <img

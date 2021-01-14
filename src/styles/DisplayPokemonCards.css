@@ -11,11 +11,6 @@
   justify-content: center;
 }
 
-.team-icon {
-  position: fixed;
-  right: 10em;
-}
-
 .card {
   text-decoration: none;
   display: flex;
@@ -25,14 +20,14 @@
   border: solid black 1px;
   border-radius: 3%;
   width: 31%;
-  height: 60vh;
+  height: 35vw;
   margin: 1%;
   -moz-box-shadow: 0 0 0.5em grey;
   -webkit-box-shadow: 0 0 0.5em grey;
   box-shadow: 0 0 0.5em grey;
 }
 
-h2 {
+.card h2 {
   margin: 0;
 }
 
@@ -44,7 +39,7 @@ h2 {
   display: flex;
   justify-content: center;
   width: 80%;
-  height: 60%;
+  height: 20vw;
   margin: 0 10%;
 }
 
@@ -83,6 +78,7 @@ h2 {
   align-items: center;
   position: relative;
   width: 90%;
+  height: 10%;
   margin: 1em;
 }
 
@@ -103,6 +99,12 @@ h2 {
   width: 25%;
 }
 
+@media screen and (max-width: 1400px) {
+  .card {
+    height: 45vw;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .cards-wrapper {
     flex-flow: row wrap;
@@ -112,6 +114,11 @@ h2 {
   }
   .card {
     width: 40%;
+    height: 60vw;
+  }
+
+  .card .image-container {
+    height: 30vw;
   }
 
   .lds-roller {
@@ -128,9 +135,27 @@ h2 {
   }
   .card {
     width: 70%;
+    height: 100vw;
   }
 
   .lds-roller {
     margin: 0;
+  }
+
+  .card .image-container {
+    height: 40vw;
+  }
+
+  .card h2 {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card h2 {
+    font-size: 1.5em;
+  }
+  .card {
+    height: 110vw;
   }
 }

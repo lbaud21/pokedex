@@ -216,7 +216,7 @@ progress {
   justify-content: center;
   align-items: center;
   transition: transform 0.5s;
-  height: 35vh;
+  height: 30vh;
   margin: 2em;
 }
 
@@ -243,7 +243,7 @@ progress {
   }
 
   .evolution-container .image-container {
-    height: 22vh;
+    height: 40vw;
   }
 
   .pokemon-types .image-container {

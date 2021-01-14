@@ -1,12 +1,9 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { removeFromFavoriteList } from "../actions/favoritePokemonsList";
 
 export default function DeleteButton({ pokemonName }) {
   const dispatch = useDispatch();
-  const favoritePokemonsList = useSelector(
-    (state) => state?.favoritePokemons?.favoritePokemonsList
-  );
 
   const handleClick = (pokemonName) => {
     dispatch(removeFromFavoriteList(pokemonName));

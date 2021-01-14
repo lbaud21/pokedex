@@ -4,7 +4,6 @@ import CreatePokemonCards from "./CreatePokemonCards";
 import { fetchPokemonList } from "../actions/fetchPokemonList";
 import useIntersectionObserverScroll from "../hooks/useIntersectionObserverScroll";
 import Loader from "../loader/loader";
-import { Link } from "@reach/router";
 import "../styles/DisplayPokemonCards.css";
 
 export default function DisplayPokemonCards() {
@@ -31,9 +30,6 @@ export default function DisplayPokemonCards() {
 
   return (
     <div className="cards-wrapper">
-      <Link to="/team" className="team-icon">
-        <img src="./images/team_icon.png" alt="Click me to see your team" />
-      </Link>
       {pokemonList.map((pokemon, index) => (
         <CreatePokemonCards
           key={pokemon.name}
