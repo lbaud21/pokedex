@@ -8,7 +8,7 @@ Responsive React App which allows you to discover all the existing Pokémons.
 
 ### Click on a Pokémon card to display its details
 
-![Pokémon details](/public/pokemon-details_illustration.png)
+![Pokémon details](/public/pokemons-details_illustration.png)
 
 ### Add/remove a Pokémon to your team by clicking the star button
 
