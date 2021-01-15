@@ -16,7 +16,7 @@ export default function CreatePokemonCards({
 }) {
   if (listLength === index + 1) {
     return (
-      <Link to={`/details/${name}`} className="card" ref={callbackFunc}>
+      <Link to={`/pokedex/details/${name}`} className="card" ref={callbackFunc}>
         <div className="card-header">
           <h2>{name}</h2>
           <HandleFavoriteButtonClick pokemonName={name} />
@@ -45,7 +45,7 @@ export default function CreatePokemonCards({
     );
   } else {
     return (
-      <Link to={`/details/${name}`} className="card">
+      <Link to={`/pokedex/details/${name}`} className="card">
         <div className="card-header">
           <h2>{name}</h2>
           <HandleFavoriteButtonClick pokemonName={name} />

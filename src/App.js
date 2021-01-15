@@ -19,7 +19,7 @@ function App() {
             alt="Pokedex title"
           ></img>
         </Link>
-        <Link to="/team" className="team-icon">
+        <Link to="/pokedex/team" className="team-icon">
           <img
             src={`${process.env.PUBLIC_URL}/images/team_icon.png`}
             alt="Click me to see your team"
@@ -30,8 +30,8 @@ function App() {
       <div className="App">
         <Router>
           <DisplayPokemonCards path="/pokedex" />
-          <DisplayDetailsAndEvolutions path="/details/:name" />
-          <DisplayTeam path="/team" />
+          <DisplayDetailsAndEvolutions path="/pokedex/details/:name" />
+          <DisplayTeam path="pokedex/team" />
         </Router>
       </div>
     </>

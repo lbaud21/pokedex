@@ -19,7 +19,7 @@ export default function CreateEvolutionChain({
         {evolutionsNames.map((name, index) => {
           return (
             <Link
-              to={`/details/${name}`}
+              to={`/pokedex/details/${name}`}
               key={`evolution ${name}`}
               className="evolution-data"
             >

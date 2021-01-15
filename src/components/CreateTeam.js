@@ -5,7 +5,7 @@ import DeleteButton from "./DeleteButton";
 
 export default function CreateTeam({ name, picURL, height, weight, types }) {
   return (
-    <Link to={`/details/${name}`} className="card">
+    <Link to={`/pokedex/details/${name}`} className="card">
       <div className="card-header">
         <h2>{name}</h2>
         <DeleteButton pokemonName={name} />
