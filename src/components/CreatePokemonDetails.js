@@ -28,7 +28,7 @@ export default function CreatePokemonDetails({
               src={
                 picURL
                   ? picURL
-                  : `${process.env.PUBLIC_URL}./images/no-image.jpg`
+                  : `${process.env.PUBLIC_URL}/images/no-image.jpg`
               }
               alt={name}
             ></img>
