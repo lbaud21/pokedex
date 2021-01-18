@@ -42,7 +42,7 @@ export default function DisplayTeam() {
   } else {
     return (
       <div className="cards-wrapper">
-        {loading && <Loader />};
+        {loading && <Loader />}
         {teamData.map((pokemon) => (
           <CreateTeam
             key={pokemon?.name}
