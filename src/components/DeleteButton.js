@@ -26,6 +26,7 @@ export default function DeleteButton({ pokemonName }) {
         event.preventDefault();
         handleClick(pokemonName);
       }}
+      style={{ cursor: "pointer" }}
     >
       <ButtonImage />
     </button>
