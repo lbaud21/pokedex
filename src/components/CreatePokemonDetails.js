@@ -66,7 +66,7 @@ export default function CreatePokemonDetails({
               <span>height:</span> {height} m
             </p>
             <p>
-              <span>weight:</span> {weight} m
+              <span>weight:</span> {weight} kg
             </p>
           </div>
 
