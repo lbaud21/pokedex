@@ -1,5 +1,4 @@
 import React from "react";
-//import "../styles/pokemonDetails.css";
 
 export default function CreatePokemonDetails({
   name,

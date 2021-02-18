@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/App.css";
-import { Link } from "@reach/router";
+import { Link } from "react-router-dom";
 import HandleFavoriteButtonClick from "./HandleFavoriteButtonClick";
 
 export default function CreatePokemonCards({
@@ -12,11 +12,10 @@ export default function CreatePokemonCards({
   callbackFunc,
   index,
   listLength,
-  handleButtonClick,
 }) {
   if (listLength === index + 1) {
     return (
-      <Link to={`/pokedex/details/${name}`} className="card" ref={callbackFunc}>
+      <Link to={`/details/${name}`} className="card" ref={callbackFunc}>
         <div className="card-header">
           <h2>{name}</h2>
           <HandleFavoriteButtonClick pokemonName={name} />
@@ -45,7 +44,7 @@ export default function CreatePokemonCards({
     );
   } else {
     return (
-      <Link to={`/pokedex/details/${name}`} className="card">
+      <Link to={`/details/${name}`} className="card">
         <div className="card-header">
           <h2>{name}</h2>
           <HandleFavoriteButtonClick pokemonName={name} />

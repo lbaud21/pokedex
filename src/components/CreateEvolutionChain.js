@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@reach/router";
+import { Link } from "react-router-dom";
 import "../styles/pokemonDetails.css";
 
 export default function CreateEvolutionChain({
@@ -19,7 +19,7 @@ export default function CreateEvolutionChain({
         {evolutionsNames.map((name, index) => {
           return (
             <Link
-              to={`/pokedex/details/${name}`}
+              to={`/details/${name}`}
               key={`evolution ${name}`}
               className="evolution-data"
             >

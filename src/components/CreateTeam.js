@@ -1,11 +1,11 @@
 import React from "react";
 import "../styles/App.css";
-import { Link } from "@reach/router";
+import { Link } from "react-router-dom";
 import DeleteButton from "./DeleteButton";
 
 export default function CreateTeam({ name, picURL, height, weight, types }) {
   return (
-    <Link to={`/pokedex/details/${name}`} className="card">
+    <Link to={`/details/${name}`} className="card">
       <div className="card-header">
         <h2>{name}</h2>
         <DeleteButton pokemonName={name} />

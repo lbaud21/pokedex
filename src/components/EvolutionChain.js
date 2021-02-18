@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchEvolutionChain } from "../actions/fetchEvolutionChain";
 import OrganizeEvolutionChain from "./OrganizeEvolutionChain";
 
-//import CreatePokemonDetails from "./CreatePokemonDetails";
-
 export default function EvolutionChain() {
   const dispatch = useDispatch();
 

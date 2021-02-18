@@ -1,13 +1,13 @@
 import DisplayPokemonCards from "./components/DisplayPokemonCards";
 import DisplayDetailsAndEvolutions from "./components/DisplayDetailsAndEvolutions";
 import DisplayTeam from "./components/DisplayTeam";
-import { Router, Link } from "@reach/router";
+import { HashRouter, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <HashRouter basename="/">
       <header>
-        <Link to="/pokedex" className="image-container">
+        <Link to="/" className="image-container">
           <img
             className="logo"
             src={`${process.env.PUBLIC_URL}/images/pokeball_logo.jpg`}
@@ -19,7 +19,7 @@ function App() {
             alt="Pokedex title"
           ></img>
         </Link>
-        <Link to="/pokedex/team" className="team-icon">
+        <Link to="/team" className="team-icon">
           <img
             src={`${process.env.PUBLIC_URL}/images/team_icon.png`}
             alt="Click me to see your team"
@@ -28,13 +28,11 @@ function App() {
       </header>
 
       <div className="App">
-        <Router>
-          <DisplayPokemonCards path="/pokedex" />
-          <DisplayDetailsAndEvolutions path="/pokedex/details/:name" />
-          <DisplayTeam path="pokedex/team" />
-        </Router>
+        <Route exact path="/" component={DisplayPokemonCards} />
+        <Route path="/details/:name" component={DisplayDetailsAndEvolutions} />
+        <Route path="/team" component={DisplayTeam} />
       </div>
-    </>
+    </HashRouter>
   );
 }
 
