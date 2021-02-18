@@ -12,15 +12,20 @@ export default function DisplayPokemonCards() {
   const hasMore = useSelector((state) => state.pokemonList.hasMore);
   const dispatch = useDispatch();
   const limit = 21;
-  const [offset, setOffset] = useState(pokemonList ? pokemonList.length : 0);
-
+  const [offset, setOffset] = useState(0);
+  console.log(offset);
   const changeOffset = () => {
-    return setOffset((prevState) => prevState + 21);
+    dispatch(fetchPokemonList(limit, offset + limit));
+    setOffset(pokemonList.length + limit);
   };
 
   useEffect(() => {
-    dispatch(fetchPokemonList(limit, offset));
-  }, [offset, dispatch]);
+    if (pokemonList.length === 0) {
+      console.log("useEffect entered");
+
+      dispatch(fetchPokemonList(limit, 0));
+    }
+  }, [offset, dispatch, pokemonList.length]);
 
   const lastPokemonCardRef = useIntersectionObserverScroll(
     loading,
